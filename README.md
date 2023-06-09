@@ -1,1 +1,1 @@
-# Tic-Tac-Toe-jogo-da-velha-
+# tic-tac-toe

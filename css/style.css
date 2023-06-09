@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fe8e0b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: white;
+  background-color: #3e51ff;
+  padding: 10px;
+  width: 25vw;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.playerMenu {
+  display: flex;
+  border: 1px solid black;
+  width: 30vw;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+#score {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+#score div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 5px;
+}
+#gameboard div {
+}
+
+.checkSquare {
+  margin: 5px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+}
