@@ -37,12 +37,20 @@ h1 {
   grid-template-columns: auto auto auto;
   padding: 5px;
 }
-#gameboard div {
-}
 
 .checkSquare {
   margin: 5px;
   padding: 5px;
   width: 30px;
   height: 30px;
+}
+
+.restart {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.restart button {
+  border-style: none;
+  background-color: gray;
 }
