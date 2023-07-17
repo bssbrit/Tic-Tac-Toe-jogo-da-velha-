@@ -24,8 +24,8 @@ const gameBoard = (() => {
       }
       let simboloVencedor = checkCombination();
       roundPoint(simboloVencedor);
-      scoreBoardP1.textContent = p1Score;
-      scoreBoardP2.textContent = p2Score;
+      /* scoreBoardP1.textContent = p1Score;
+      scoreBoardP2.textContent = p2Score; */
       console.log(simboloVencedor);
     });
   });
@@ -43,8 +43,11 @@ const gameBoard = (() => {
   //scores
   let p1Score = 0;
   let p2Score = 0;
+
   let scoreBoardP1 = document.getElementById("scoreP1");
   let scoreBoardP2 = document.getElementById("scoreP2");
+  scoreBoardP1.textContent = p1Score;
+  scoreBoardP2.textContent = p2Score;
 
   function checkCombination() {
     if (
@@ -110,9 +113,13 @@ const gameBoard = (() => {
     if (simbolP1 == simboloVencedor) {
       console.log(`Vencedor é Player1 com o simbolo ${simboloVencedor}`);
       simboloVencedor = "";
+      p1Score += 1;
+      scoreBoardP1.textContent = p1Score;
     } else if (simbolP2 == simboloVencedor) {
       console.log(`Vencedor é Player2 com o simbolo ${simboloVencedor}`);
       simboloVencedor = "";
+      p2Score += 1;
+      scoreBoardP2.textContent = p2Score;
     }
   }
 
@@ -147,12 +154,16 @@ const gameBoard = (() => {
   let botaoOP1 = document.getElementById("OplayerOne");
   botaoXP1.addEventListener("click", function () {
     simbolP1 = "x";
+    botaoXP2.style.backgroundColor = "red";
+    botaoXP1.style.backgroundColor = "green";
     console.log(`P1 ${simbolP1}`);
     //botaoXP2 = 1; quando acabar o round isso vai ser desfeito
   });
   botaoOP1.addEventListener("click", function () {
     simbolP1 = "o";
     console.log(`P1 ${simbolP1}`);
+    botaoOP2.style.backgroundColor = "red";
+    botaoOP1.style.backgroundColor = "green";
   });
 
   //Lógica para selecionar o simbolo do P2
@@ -162,9 +173,13 @@ const gameBoard = (() => {
   botaoXP2.addEventListener("click", function () {
     simbolP2 = "x";
     console.log(`P2 ${simbolP2}`);
+    botaoXP1.style.backgroundColor = "red";
+    botaoXP2.style.backgroundColor = "green";
   });
   botaoOP2.addEventListener("click", function () {
     simbolP2 = "o";
+    botaoOP1.style.backgroundColor = "red";
+    botaoOP2.style.backgroundColor = "green";
     console.log(`P2 ${simbolP2}`);
   });
 
